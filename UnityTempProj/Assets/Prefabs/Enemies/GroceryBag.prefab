@@ -147,5 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0054a4649a4b5174fabc28af69fe7862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.25
   damage: 1
+  pointVal: 80
+  cup: {fileID: 1277946868485052140, guid: 341a3676ddc92fe48886d660428ab6df, type: 3}
+  sixRing: {fileID: 1277946868485052140, guid: 932a00d01db9cfd468096c07a9b86e76, type: 3}

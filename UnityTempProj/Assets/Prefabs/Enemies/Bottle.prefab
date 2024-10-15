@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7216371992755336905}
   - component: {fileID: 1630095585683151720}
   - component: {fileID: 370552086858723663}
-  - component: {fileID: 5716752062967673020}
+  - component: {fileID: 5433213092961604530}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: Untagged
@@ -135,7 +135,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5716752062967673020
+--- !u!114 &5433213092961604530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,8 +144,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277946868485052140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3025608b25d2aad40b24d8bd979b5f78, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f6c96b571d6319479cbd1fd5a2cc311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   damage: 1
+  pointVal: 30
+  shards: {fileID: 1277946868485052140, guid: 860b9143ce25abd478c37dc586ceb6b9, type: 3}

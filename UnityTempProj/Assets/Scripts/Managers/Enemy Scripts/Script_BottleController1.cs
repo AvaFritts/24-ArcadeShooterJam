@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.Mathematics;
 using UnityEngine;
 
-public class Script_SixRingController : Enemy
+public class Script_BottleController : Enemy
 {
     // Start is called before the first frame update
-    GameObject player;
 
-    const float YSPEED = 2;
+    float startY;
+    float bobOffset;
+
+    public GameObject shards;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        startY = transform.position.y;
+        bobOffset = 0f;//UnityEngine.Random.Range(math.PI/2, 3*math.PI/2);
 
     }
 
@@ -19,17 +24,13 @@ public class Script_SixRingController : Enemy
     void Update()
     {
         transform.position += Vector3.left*Time.deltaTime*speed;
-        if(player.transform.position.y > transform.position.y)
-            transform.position += Vector3.up*YSPEED*Time.deltaTime;
-        if(player.transform.position.y < transform.position.y)
-            transform.position += Vector3.down*YSPEED*Time.deltaTime;
-        
-        
+        transform.position = new Vector3(transform.position.x, Mathf.Sin(transform.position.x/2 + bobOffset)*.75f + startY, 0);
     }
 
     private void OnTriggerEnter(Collider other){
         if(other.tag == "Bullet"){
             Object.Destroy(other.gameObject);
+            createShards();
             Object.Destroy(this.gameObject);
             addPoints();
         }
@@ -40,6 +41,15 @@ public class Script_SixRingController : Enemy
         if(other.tag == "Deleter"){
             Debug.Log("Hit Deleter, removing object");
             Object.Destroy(this.gameObject);
+        }
+    }
+
+    private void createShards(){
+        int num = UnityEngine.Random.Range(2,4);
+
+        for (int i = 0; i < num; i++)
+        {
+            Instantiate(shards, (Vector3)UnityEngine.Random.insideUnitCircle*1.25f + transform.position + Vector3.right*2, Quaternion.identity);
         }
     }
 }

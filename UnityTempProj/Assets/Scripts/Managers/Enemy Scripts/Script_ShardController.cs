@@ -2,29 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_SixRingController : Enemy
+public class Script_ShardController : Enemy
 {
     // Start is called before the first frame update
-    GameObject player;
-
-    const float YSPEED = 2;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-
+        transform.GetChild(0).transform.Rotate(new Vector3(0f, 0f, Random.Range(0, 3)*90f));
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.position += Vector3.left*Time.deltaTime*speed;
-        if(player.transform.position.y > transform.position.y)
-            transform.position += Vector3.up*YSPEED*Time.deltaTime;
-        if(player.transform.position.y < transform.position.y)
-            transform.position += Vector3.down*YSPEED*Time.deltaTime;
-        
-        
     }
 
     private void OnTriggerEnter(Collider other){
