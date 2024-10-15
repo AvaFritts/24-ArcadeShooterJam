@@ -1,1 +1,11 @@
-something in there
+Sammy the sea turtle is in trouble! His home, the beautiful ocean, has been overtaken by trash. What was once a lovely place to swim around and have fun is now a murky wasteland. Everyone has either hid or fled, leaving Sammy to save the waters.
+
+Move: Left Joystick
+Shoot: Left or Right Trigger
+
+Credits------------------------------------
+
+Art: Ava Fritts & Noah
+Sound: Celeste
+Programming: Ruby
+Moral support: Astrid
