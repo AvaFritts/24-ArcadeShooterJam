@@ -32,5 +32,9 @@ public class Enemy : MonoBehaviour
         GameObject.FindGameObjectWithTag("GameController").GetComponent<Script_GameManager>().points += pointVal;
     }
 
+    public void addPoints(int points){
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<Script_GameManager>().points += points;
+    }
+
 
 }

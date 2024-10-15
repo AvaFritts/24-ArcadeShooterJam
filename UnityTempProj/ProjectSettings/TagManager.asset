@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - Deleter
   - BulletDeleter
+  - Health
+  - Score
   layers:
   - Default
   - TransparentFX

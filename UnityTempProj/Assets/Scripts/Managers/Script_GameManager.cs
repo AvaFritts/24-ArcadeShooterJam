@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class Script_GameManager : MonoBehaviour
 {
@@ -23,10 +24,14 @@ public class Script_GameManager : MonoBehaviour
     float totalTime4;
     //I know this is gross but honestly do it yourself if you have an issue
 
+    GameObject scoreText;
+
     void Start()
     {
 
         player = GameObject.FindGameObjectWithTag("Player");
+        scoreText = GameObject.FindGameObjectWithTag("Score");
+
 
         timer = 0;
         misses = 0;
@@ -36,12 +41,15 @@ public class Script_GameManager : MonoBehaviour
         totalTime2 = 0;
         totalTime3 = 0;
         totalTime4 = 0;
+
+        scoreText.GetComponent<TextMeshProUGUI>().SetText("Score: " + points);
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        scoreText.GetComponent<TextMeshProUGUI>().SetText("Score: " + points);
         totalTime1 += Time.deltaTime;
         timer += Time.deltaTime;
 
@@ -80,6 +88,13 @@ public class Script_GameManager : MonoBehaviour
 
     public void dead(){
         Debug.Log("Player Died");
-        Time.timeScale = 0;
+        GameManager.GM.score = points;
+        GameManager.GM.accuracy = accuracy();
+        GameManager.GM.dead();
     }
+
+    public float accuracy(){
+        return (float)((float)shots-misses)/shots;
+    }
+
 }

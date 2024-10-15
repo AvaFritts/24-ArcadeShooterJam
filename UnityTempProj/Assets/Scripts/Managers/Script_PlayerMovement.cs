@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,6 +30,8 @@ public class Script_PlayerMovement : MonoBehaviour
 
     Vector3 offset = new Vector3(.3f, 0, 0);
 
+    GameObject healthText;
+
     
     void Start()
     {
@@ -37,6 +41,9 @@ public class Script_PlayerMovement : MonoBehaviour
         animator = this.transform.GetChild(0).GetComponent<Animator>();
 
         timer = 0.0f;
+        healthText = GameObject.FindGameObjectWithTag("Health");
+        healthText.GetComponent<TextMeshProUGUI>().SetText("Health: " + health);
+
     }
 
     // Update is called once per frame
@@ -70,6 +77,7 @@ public class Script_PlayerMovement : MonoBehaviour
 
     public void damage(int damage){
         health += -damage;
+        healthText.GetComponent<TextMeshProUGUI>().SetText("Health: " + health);
         if(health <= 0){
             animator.SetBool("is_Dead", true);
             gameManager.GetComponent<Script_GameManager>().dead();
