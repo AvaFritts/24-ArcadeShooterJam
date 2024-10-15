@@ -33,6 +33,7 @@ public class Script_GroceryBagController : Enemy
                 Instantiate(cup, transform.position + Vector3.left, Quaternion.identity);
             }
             else Instantiate(sixRing, transform.position + Vector3.left, Quaternion.identity);
+            if(health > 0) addPoints(10);
             if(health<=0){
                 addPoints();
                 Object.Destroy(this.gameObject);
