@@ -55,7 +55,13 @@ public class Script_PlayerMovement : MonoBehaviour
             newBullet.transform.position = transform.position + offset;
             timer = 0.0f;
             gameManager.GetComponent<Script_GameManager>().shots += 1;
+            GetComponent<AudioSource>().Play();
         }
+
+        pos = transform.position;
+        pos.y =  Mathf.Clamp(transform.position.y, -3.61f, 5.65f);
+        pos.x =  Mathf.Clamp(transform.position.x, -8.4f, 8.35f);
+        transform.position = pos;
 
 
 

@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     public int damage;
 
+    public int pointVal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,11 @@ public class Enemy : MonoBehaviour
     public void HurtPlayer(){
         Debug.Log("Ouch");
         GameObject.FindGameObjectWithTag("Player").GetComponent<Script_PlayerMovement>().damage(damage);
-
     }
+
+    public void addPoints(){
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<Script_GameManager>().points += pointVal;
+    }
+
 
 }
