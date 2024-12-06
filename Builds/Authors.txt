@@ -1,0 +1,4 @@
+Art: Ava Fritts & Noah
+Sound: Celeste
+Programming: Ruby
+Moral support: Astrid
