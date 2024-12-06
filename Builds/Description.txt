@@ -2,10 +2,3 @@ Sammy the sea turtle is in trouble! His home, the beautiful ocean, has been over
 
 Move: Left Joystick
 Shoot: Left or Right Trigger
-
-Credits------------------------------------
-
-Art: Ava Fritts & Noah
-Sound: Celeste
-Programming: Ruby
-Moral support: Astrid
